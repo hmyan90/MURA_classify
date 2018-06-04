@@ -8,9 +8,8 @@ import pandas as pd
 # from keras.applications.vgg16 import VGG16
 from keras.applications.resnet50 import ResNet50
 from keras.preprocessing import image
-from keras.applications.vgg16 import preprocess_input
+from keras.applications.resnet50 import preprocess_input
 import numpy as np
-from keras.applications.vgg16 import decode_predictions
 from keras.utils.np_utils import to_categorical
 
 from sklearn.preprocessing import LabelEncoder
