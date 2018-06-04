@@ -1,18 +1,27 @@
 # MURA_classify
 
-# Your directory looks like:
+### Your directory looks like:
+               ├── MURA-v1.1/
+               
+MURA_classify  ├── ResNet/
 
-(MURA_classify) \ 
-  MURA-v1.1/
-  ResNet/
-  vgg/
-  
-Run:
+               ├── Vgg/
+               
+               └── gen_predict.py
+                 
+           
+### Run
   cd MURA_classify/
+  
   python ResNet/freeze_resnet.py
+  
   python ResNet/freeze_part_resnet.py
+  
   python vgg/freeze_vgg.py
+  
   python vgg/freeze_part_vgg.py
   
-Prediction:
-  python ResNet/gen_predict.py MURA-v1.1/valid_image_paths.csv prediction.csv
+  
+### Prediction
+
+  python ResNet/gen_predict.py MURA-v1.1/valid_image_paths.csv ./prediction.csv
