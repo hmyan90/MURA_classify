@@ -19,10 +19,10 @@ from keras.layers import Input, Dense, Convolution2D, MaxPooling2D, AveragePooli
 # from sklearn.metrics import log_loss
 from scipy.misc import imresize
 
-train=pd.read_csv("/home/bertozzigroup/hmyan/242/final/MURA-v1.1/train_image_paths.csv", names=['filename'])
-valid=pd.read_csv("/home/bertozzigroup/hmyan/242/final/MURA-v1.1/valid_image_paths.csv", names=['filename'])
-train_path="/home/bertozzigroup/hmyan/242/final/"
-valid_path="/home/bertozzigroup/hmyan/242/final/"
+train=pd.read_csv("MURA-v1.1/train_image_paths.csv", names=['filename'])
+valid=pd.read_csv("MURA-v1.1/valid_image_paths.csv", names=['filename'])
+train_path="./"
+valid_path="./"
 
 train_img=[]
 train_y = []
@@ -88,9 +88,3 @@ model.summary()
 
 # Start Fine-tuning
 model.fit(X_train, Y_train,batch_size=batch_size,epochs=nb_epoch,shuffle=True,verbose=1,validation_data=(X_valid, Y_valid))
-
-# Make predictions
-# predictions_valid = model.predict(X_valid, batch_size=batch_size, verbose=1)
-
-# Cross-entropy loss score
-# score = log_loss(Y_valid, predictions_valid)

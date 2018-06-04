@@ -13,16 +13,16 @@ from scipy.misc import imresize
 from pathlib import Path
 from keras.optimizers import SGD
 
-train=pd.read_csv("/home/bertozzigroup/hmyan/242/final/MURA-v1.1/train_image_paths.csv", names=['filename'])
-valid=pd.read_csv("/home/bertozzigroup/hmyan/242/final/MURA-v1.1/valid_image_paths.csv", names=['filename'])
-train_path="/home/bertozzigroup/hmyan/242/final/"
-valid_path="/home/bertozzigroup/hmyan/242/final/"
+train=pd.read_csv("MURA-v1.1/train_image_paths.csv", names=['filename'])
+valid=pd.read_csv("MURA-v1.1/valid_image_paths.csv", names=['filename'])
+train_path="./"
+valid_path="./"
 
-if Path('bottleneck_features_trainX.npy').exists():
-    X_train = np.load(open('bottleneck_features_trainX.npy'))
-    X_valid = np.load(open('bottleneck_features_validationX.npy'))
-    Y_train = np.load(open('bottleneck_features_trainY.npy'))
-    Y_valid = np.load(open('bottleneck_features_validationY.npy'))    
+if Path('ResNet/bottleneck_features_trainX.npy').exists():
+    X_train = np.load(open('ResNet/bottleneck_features_trainX.npy'))
+    X_valid = np.load(open('ResNet/bottleneck_features_validationX.npy'))
+    Y_train = np.load(open('ResNet/bottleneck_features_trainY.npy'))
+    Y_valid = np.load(open('ResNet/bottleneck_features_validationY.npy'))    
 else:
     train_img=[]
     train_y = []
@@ -93,8 +93,8 @@ model.fit(X_train, Y_train, epochs=12, batch_size=64, verbose=1, validation_data
 # serialize model to JSON
 print("Saved model to disk")
 model_json = model.to_json()
-with open("model.json", "w") as json_file:
+with open("ResNet/model.json", "w") as json_file:
     json_file.write(model_json)
     
 # serialize weights to HDF5
-model.save_weights("model.h5")
+model.save_weights("ResNet/model.h5")
