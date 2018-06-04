@@ -13,10 +13,10 @@ from scipy.misc import imresize
 from pathlib import Path
 from keras.optimizers import SGD
 
-train=pd.read_csv("MURA-v1.1/train_image_paths.csv", names=['filename'])
-valid=pd.read_csv("MURA-v1.1/valid_image_paths.csv", names=['filename'])
-train_path="./"
-valid_path="./"
+train=pd.read_csv("/home/bertozzigroup/hmyan/242/final/MURA-v1.1/train_image_paths.csv", names=['filename'])
+valid=pd.read_csv("/home/bertozzigroup/hmyan/242/final/MURA-v1.1/valid_image_paths.csv", names=['filename'])
+train_path="/home/bertozzigroup/hmyan/242/final/"
+valid_path="/home/bertozzigroup/hmyan/242/final/"
 
 if Path('bottleneck_features_trainX.npy').exists():
     X_train = np.load(open('bottleneck_features_trainX.npy'))
