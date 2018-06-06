@@ -13,6 +13,7 @@ MURA_classify  ├── ResNet/
            
 ### Run
   cd MURA_classify/
+  * python prehandle_data.py (do first, do once)
   
   * python ResNet/freeze_resnet.py
   
