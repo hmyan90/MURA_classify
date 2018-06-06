@@ -18,11 +18,11 @@ valid=pd.read_csv("MURA-v1.1/valid_image_paths.csv", names=['filename'])
 train_path="./"
 valid_path="./"
 
-if Path('bottleneck_features_trainX.npy').exists():
-    X_train = np.load(open('bottleneck_features_trainX.npy'))
-    X_valid = np.load(open('bottleneck_features_validationX.npy'))
-    Y_train = np.load(open('bottleneck_features_trainY.npy'))
-    Y_valid = np.load(open('bottleneck_features_validationY.npy'))    
+if Path('Vgg/bottleneck_features_trainX.npy').exists():
+    X_train = np.load(open('Vgg/bottleneck_features_trainX.npy'))
+    X_valid = np.load(open('Vgg/bottleneck_features_validationX.npy'))
+    Y_train = np.load(open('Vgg/bottleneck_features_trainY.npy'))
+    Y_valid = np.load(open('Vgg/bottleneck_features_validationY.npy'))    
 else:
     train_img=[]
     train_y = []
@@ -63,10 +63,10 @@ else:
     
     X_train, X_valid, Y_train, Y_valid = train_x, valid_x, train_y, valid_y
     
-    np.save(open('bottleneck_features_trainX.npy', 'w'), X_train)
-    np.save(open('bottleneck_features_validationX.npy', 'w'), X_valid)
-    np.save(open('bottleneck_features_trainY.npy', 'w'), Y_train)
-    np.save(open('bottleneck_features_validationY.npy', 'w'), Y_valid)
+    np.save(open('Vgg/bottleneck_features_trainX.npy', 'w'), X_train)
+    np.save(open('Vgg/bottleneck_features_validationX.npy', 'w'), X_valid)
+    np.save(open('Vgg/bottleneck_features_trainY.npy', 'w'), Y_train)
+    np.save(open('Vgg/bottleneck_features_validationY.npy', 'w'), Y_valid)
 
 # creating a mlp model
 from keras.layers import Dense, Activation
